@@ -1,39 +1,36 @@
-# 🌱 AI-Powered Crop Disease Detector 🚀
+# 🌱 AI-Powered Potato Health Detector 🚀
 
 ## 🌟 Introduction
-Welcome to the **AI-Powered Crop Disease Detector**! 🧠🌿 This project utilizes **Convolutional Neural Networks (CNNs)** to analyze plant leaf images and detect diseases. It aims to assist farmers and agricultural experts in identifying crop diseases early and accurately. 🌾🔍
+Welcome to the **AI-Powered Potato Health Detector**! 🧠🌿 This project utilizes **Deep Learning Models** to analyze potato leaf images and detect diseases. It aims to assist farmers and agricultural experts in identifying potato diseases early and accurately. 🌾🔍
 
 ## ✨ Features
-- 📸 **Image-Based Detection** – Upload an image of a leaf, and the model will predict the disease.
-- 🏷️ **Multi-Class Classification** – Identifies various crop diseases.
+- 📸 **Image-Based Detection** – Upload an image of a potato leaf, and the model will predict its health status.
+- 🌂 **Multi-Class Classification** – Identifies various potato diseases.
 - 📊 **Real-Time Predictions** – Provides instant results using a trained deep learning model.
-- 📈 **High Accuracy** – Built using CNN architectures like **VGG16, ResNet50, or MobileNet**.
+- 📈 **High Accuracy** – Built using architectures like **CNN, SVM, and GNN**.
 - 🖥️ **User-Friendly Interface** – (Optional) Deploy using **Flask/FastAPI & Streamlit**.
 
 ## 🛠️ Tech Stack
 - **Programming Language:** Python 🐍
 - **Deep Learning Framework:** TensorFlow / PyTorch 🧠
 - **Image Processing:** OpenCV 📷
+- **Machine Learning Models:** CNN, SVM, GNN 🧪
 - **Web Framework (Optional):** Flask / FastAPI 🌐
-- **Dataset:** PlantVillage 📊
+- **Dataset:** PlantVillage (Potato Leaves) 📊
 
-## 📥 Dataset
+## 👅 Dataset
 The dataset should be placed in the specified directory:
 ```
-C:\Users\Ishaan Saxena\Desktop\PlantVillage
+C:\\Users\\Ishaan Saxena\\Desktop\\PotatoDataset
 ```
 Make sure the dataset is structured in the following format:
 ```
-PlantVillage/
-    ├── Class_1/
+PotatoDataset/
+    ├── Healthy/
     │   ├── image1.jpg
     │   ├── image2.jpg
     │   ├── ...
-    ├── Class_2/
-    │   ├── image1.jpg
-    │   ├── image2.jpg
-    │   ├── ...
-    ├── Class_3/
+    ├── Diseased/
     │   ├── image1.jpg
     │   ├── image2.jpg
     │   ├── ...
@@ -44,17 +41,22 @@ Download the dataset from:
 ## 📌 How to Use
 1. Install dependencies:
    ```bash
-   pip install tensorflow keras numpy matplotlib opencv-python flask fastapi streamlit
+   pip install tensorflow keras numpy matplotlib opencv-python flask fastapi streamlit scikit-learn torch torchvision
    ```
 2. Run the app using Flask or Streamlit:
    ```bash
    streamlit run app.py
    ```
-3. Upload an image of a plant leaf. 🌿
+3. Upload an image of a potato leaf. 🌿
 4. Get instant results on whether the leaf is **healthy** or **infected**. ✅❌
 
-## 🏗️ Model Architecture
-The model consists of:
+## 📝 Model Architectures
+The models used in this project include:
+- **CNN (Convolutional Neural Networks)** for image feature extraction.
+- **SVM (Support Vector Machines)** for classification.
+- **GNN (Graph Neural Networks)** for improved feature representation.
+
+### CNN Model Structure
 - ✅ Convolutional layers with ReLU activation
 - ✅ MaxPooling layers to reduce spatial dimensions
 - ✅ Fully connected (Dense) layer with 512 neurons
@@ -90,26 +92,26 @@ model.fit(train_generator,
 ## 💾 Saving and Loading the Model
 After training, the model is saved as:
 ```python
-model.save('potato_disease_model.h5')
+model.save('potato_health_model.h5')
 ```
 To load the trained model:
 ```python
 from tensorflow.keras.models import load_model
-model = load_model('potato_disease_model.h5')
+model = load_model('potato_health_model.h5')
 ```
 
-## 📈 Results
+## 📊 Results
 After training, the model's performance can be evaluated using validation accuracy and loss metrics.
 
 ## 🚀 Future Improvements
 - ✅ Enhance accuracy using **Transfer Learning**.
-- ✅ Expand dataset to include more plant species. 🌍
+- ✅ Expand dataset for better generalization. 🌍
 - ✅ Deploy on **Cloud** for mobile accessibility. ☁️📱
-- ✅ Create an **Android App** for real-time disease detection. 📲
+- ✅ Create an **Android App** for real-time potato disease detection. 📲
 
 ## 🤝 Contributing
 Contributions are always welcome! 🎉
-1. Fork the repo 🍴
+1. Fork the repo 🍔
 2. Create a new branch 🔀
 3. Commit your changes ✅
 4. Push & submit a PR 🚀

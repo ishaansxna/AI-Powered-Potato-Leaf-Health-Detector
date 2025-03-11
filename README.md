@@ -1,27 +1,27 @@
-# 🌱 AI-Powered Potato Health Detector 🚀
+# 🌱 AI-Powered Potato Leaf Health Detector 🚀
 
 ## 🌟 Introduction
-Welcome to the **AI-Powered Potato Health Detector**! 🧠🌿 This project utilizes **Deep Learning Models** to analyze potato leaf images and detect diseases. It aims to assist farmers and agricultural experts in identifying potato diseases early and accurately. 🌾🔍
+Welcome to the **AI-Powered Potato Leaf Health Detector**! 🧠🌿 This project utilizes **Deep Learning Models** to analyze potato leaf images and detect diseases. It aims to assist farmers and agricultural experts in identifying potato leaf diseases early and accurately. 🌾🔍
 
 ## ✨ Features
-- 📸 **Image-Based Detection** – Upload an image of a potato leaf, and the model will predict its health status.
-- 🌂 **Multi-Class Classification** – Identifies various potato diseases.
-- 📊 **Real-Time Predictions** – Provides instant results using a trained deep learning model.
-- 📈 **High Accuracy** – Built using architectures like **CNN, SVM, and GNN**.
+- 🎨 **Image-Based Detection** – Upload an image of a potato leaf, and the model will predict its health status.
+- 🌲 **Multi-Class Classification** – Identifies various potato leaf diseases.
+- 🌍 **Real-Time Predictions** – Provides instant results using a trained deep learning model.
+- 📊 **High Accuracy** – Built using architectures like **CNN and ResNet**.
 - 🖥️ **User-Friendly Interface** – (Optional) Deploy using **Flask/FastAPI & Streamlit**.
 
 ## 🛠️ Tech Stack
 - **Programming Language:** Python 🐍
 - **Deep Learning Framework:** TensorFlow / PyTorch 🧠
 - **Image Processing:** OpenCV 📷
-- **Machine Learning Models:** CNN, SVM, GNN 🧪
+- **Machine Learning Models:** CNN, ResNet 🔪
 - **Web Framework (Optional):** Flask / FastAPI 🌐
 - **Dataset:** PlantVillage (Potato Leaves) 📊
 
 ## 👅 Dataset
 The dataset should be placed in the specified directory:
 ```
-C:\\Users\\Ishaan Saxena\\Desktop\\PotatoDataset
+C:\Users\Ishaan Saxena\Desktop\PotatoDataset
 ```
 Make sure the dataset is structured in the following format:
 ```
@@ -53,8 +53,7 @@ Download the dataset from:
 ## 📝 Model Architectures
 The models used in this project include:
 - **CNN (Convolutional Neural Networks)** for image feature extraction.
-- **SVM (Support Vector Machines)** for classification.
-- **GNN (Graph Neural Networks)** for improved feature representation.
+- **ResNet (Residual Networks)** for enhanced deep learning performance.
 
 ### CNN Model Structure
 - ✅ Convolutional layers with ReLU activation
@@ -63,10 +62,7 @@ The models used in this project include:
 - ✅ A final output layer with Softmax activation for multi-class classification
 
 The CNN is based on architectures such as:
-- **VGG16**
 - **ResNet50**
-- **MobileNetV2**
-- **EfficientNet**
 
 ## 🚀 Training Process
 The training data undergoes augmentation using `ImageDataGenerator`:
@@ -92,12 +88,12 @@ model.fit(train_generator,
 ## 💾 Saving and Loading the Model
 After training, the model is saved as:
 ```python
-model.save('potato_health_model.h5')
+model.save('potato_leaf_health_model.h5')
 ```
 To load the trained model:
 ```python
 from tensorflow.keras.models import load_model
-model = load_model('potato_health_model.h5')
+model = load_model('potato_leaf_health_model.h5')
 ```
 
 ## 📊 Results
@@ -107,7 +103,7 @@ After training, the model's performance can be evaluated using validation accura
 - ✅ Enhance accuracy using **Transfer Learning**.
 - ✅ Expand dataset for better generalization. 🌍
 - ✅ Deploy on **Cloud** for mobile accessibility. ☁️📱
-- ✅ Create an **Android App** for real-time potato disease detection. 📲
+- ✅ Create an **Android App** for real-time potato leaf disease detection. 📲
 
 ## 🤝 Contributing
 Contributions are always welcome! 🎉
@@ -118,4 +114,3 @@ Contributions are always welcome! 🎉
 
 ---
 💡 **Made with ❤️ for Farmers & AgriTech Innovators!** 🚜
-

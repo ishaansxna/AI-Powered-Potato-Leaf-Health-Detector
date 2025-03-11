@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Disease Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #upload-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #upload-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #file, #model-select {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px dashed #4CAF50;
+            border-radius: 10px;
+            background-color: #f0f8f0;
+            color: #4CAF50;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            width: 100%;
+        }
+
+        #file:hover, #model-select:hover {
+            background-color: #e0f0e0;
+            border-color: #45a049;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #4CAF50;
+            padding: 10px;
+            background-color: #f0f8f0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-box h2 {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Potato Disease Detection</h1>
+    <form id="upload-form">
+        <select id="model-select">
+            <option value="cnn">CNN Model</option>
+            <option value="resnet">ResNet50 Model</option>
+        </select>
+        <input type="file" id="file" name="file" accept="image/*">
+        <button type="submit">Upload and Detect</button>
+    </form>
+    <div id="result"></div>
+
+    <div class="info-box">
+        <h2>How It Works</h2>
+        <p>Upload an image of a potato leaf, and our advanced AI will analyze it to detect any signs of disease. Get instant results and recommendations!</p>
+    </div>
+
+    <div class="info-box">
+        <h2>Why It Matters</h2>
+        <p>Early detection of potato diseases can save crops, reduce losses, and ensure food security. Our tool helps farmers and gardeners take timely action.</p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Potato Disease Detection. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var formData = new FormData();
+            formData.append('file', document.getElementById('file').files[0]);
+
+            var selectedModel = document.getElementById('model-select').value; // Get selected model
+
+            fetch('/predict?model=' + selectedModel, { 
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = 'Result: ' + data.result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
